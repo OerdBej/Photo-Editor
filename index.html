@@ -1,2 +1,51 @@
-<hello>
-  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <h3>Image Editor</h3>
+    <div class="wrapper">
+      <div class="editor-panel">
+        <div class="filter">
+          <label class="title">Filter</label>
+          <div class="options">
+            <button>Brightnes</button>
+            <button>Saturation</button>
+            <button>Inversion</button>
+            <button>Grayscale</button>
+          </div>
+          <div class="slider">
+            <div class="filter-info">
+              <p class="name">Brightnes</p>
+              <p class="value">100%</p>
+            </div>
+            <input type="range" value="100" min="0" max="200">
+          </div>
+
+        </div>
+        <div class="rotate">
+          <label class="title">Rotate & Flip</label>
+
+        </div>
+
+      </div>
+      <div class="preview-img">
+
+      </div>
+
+    </div>
+  </div>
+</body>
+
+
+<link rel="stylesheet" href="script.js">
+
+</html>
