@@ -9,5 +9,72 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: azure;
+  background: #ccc;
+}
+
+.container {
+  width: 850px;
+  background-color: rgb(240, 150, 90);
+  border-radius: 10px;
+  padding: 30px 35px 35px;
+  box-shadow: 0 10px 20px rgb(245, 127, 1);
+}
+
+.container h3 {
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.container .wrapper {
+  display: flex;
+  margin: 20px 0;
+  min-height: 335px;
+}
+
+.wrapper .editor-panel {
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 280px;
+  height: 317px;
+}
+
+.editor-panel .title {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.editor-panel .options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.editor-panel button {
+  height: 40px;
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  background: #fff;
+  border: 2px solid #aaa;
+}
+
+.editor-panel button {
+  background: #f5f5f5;
+}
+
+.editor-panel .filter button {
+  width: calc(100% / 2 - 4px);
+}
+
+.filter button.active {
+  color: #fff;
+  background: #5372f0;
+  border-color: #9cf053;
+}
+
+.editor-panel .rotate button {
+  width: calc(100% / 4 - 3px);
 }
