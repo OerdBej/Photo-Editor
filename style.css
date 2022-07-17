@@ -17,7 +17,14 @@ body {
   padding: 30px 35px 35px;
   background-color: rgb(240, 150, 90);
   border-radius: 10px;
-  box-shadow: 0 10px 20px rgb(245, 127, 1);
+  box-shadow: 0 10px 20px rgb(2, 198, 208);
+}
+
+/* When nothing choosed as image turn it off */
+
+.container.disable :where(.editor-panel, .reset-filter, .save-img) {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .container h3 {
@@ -74,7 +81,6 @@ body {
 .filter button.active {
   color: #fff;
   background: #5372f0;
-  border-color: #9cf053;
 }
 
 .editor-panel .slider {

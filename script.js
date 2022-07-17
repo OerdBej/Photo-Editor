@@ -1,5 +1,6 @@
 const fileInput = document.querySelector(".file-input");
 const chooseImgBtn = document.querySelector(".choose-img");
+const previewImg = document.querySelector(".preview-img img");
 
 console.log(fileInput);
 
@@ -7,6 +8,12 @@ console.log(fileInput);
 const loadImage = () => {
   let file = fileInput.files[0];
   if (!file) return;
+  // creates a string containing URL representing the object given in parameter.
+  previewImg.src = URL.createObjectURL(file);
+  // When something is clicked put on the flter button ON
+  previewImg.addEventListener("load", () => {
+    document.querySelector(".container").classList.remove("disable");
+  });
   console.log(file);
 };
 
