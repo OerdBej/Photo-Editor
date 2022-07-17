@@ -14,9 +14,9 @@ body {
 
 .container {
   width: 850px;
+  padding: 30px 35px 35px;
   background-color: rgb(240, 150, 90);
   border-radius: 10px;
-  padding: 30px 35px 35px;
   box-shadow: 0 10px 20px rgb(245, 127, 1);
 }
 
@@ -132,12 +132,10 @@ body {
 }
 
 .controls .choose-img {
-  border: 1px solid #5372f0;
   background: #6c757d;
 }
 
 .controls .save-img {
-  border: 1px solid #5372f0;
   background: #5372f0;
   margin-left: 5px;
   color: white;
@@ -145,3 +143,36 @@ body {
 }
 
 /* responsivenes 18*/
+
+@media screen and (max-width: 760px) {
+  .container {
+    padding: 24px;
+  }
+  .container .wrapper {
+    flex-wrap: wrap-reverse;
+  }
+  .wrapper .editor-panel {
+    width: 100%;
+  }
+  .wrapper .preview-img {
+    width: 100%;
+    margin: 0 0 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .controls button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .controls .row {
+    width: 100%;
+  }
+  .controls .row .save-img {
+    margin-left: 0px;
+  }
+}
+
+.divinder {
+  color: red;
+}
