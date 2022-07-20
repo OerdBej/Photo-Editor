@@ -15,14 +15,16 @@
     <h3>Image Editor</h3>
     <div class="wrapper">
       <div class="editor-panel">
+        <!-- filter -->
         <div class="filter">
           <label class="title">Filter</label>
           <div class="options">
-            <button class="active">Brightness</button>
-            <button>Saturation</button>
-            <button>Inversion</button>
-            <button>Grayscale</button>
+            <button id="brightness" class="active">Brightness</button>
+            <button id="saturation">Saturation</button>
+            <button id="inversion">Inversion</button>
+            <button id="grayscale">Grayscale</button>
           </div>
+          <!-- filter info -->
           <div class="slider">
             <div class="filter-info">
               <p class="name">Brightnes</p>
@@ -31,6 +33,7 @@
             <input type="range" value="100" min="0" max="200" />
           </div>
         </div>
+        <!-- Rotate buttons -->
         <div class="rotate">
           <label class="title">Rotate & Flip</label>
           <div class="options">
