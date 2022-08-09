@@ -28,6 +28,10 @@ filterOptions.forEach((option) => {
     document.querySelector(".filter .active").classList.remove("active");
     option.classList.add("active");
     filterName.innerText = option.innerText;
+    if (option.id === "brightnes") {
+      filterSlider.value = `brightness`;
+      filterValue.innerText = `${brightness}`;
+    }
   });
 });
 
