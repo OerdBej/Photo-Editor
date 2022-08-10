@@ -5,6 +5,7 @@ filterSlider = document.querySelector(".slider input");
 previewImg = document.querySelector(".preview-img img");
 chooseImgBtn = document.querySelector(".choose-img");
 filterValue = document.querySelector(".filter-info .value");
+rotateOptions = document.querySelectorAll(".rotate button");
 
 // manually setting up brightness and saturation to make the conditions. So each button will have set up the value from the input.
 
@@ -13,7 +14,13 @@ let brightness = 100,
   inversion = 0,
   grayscale = 0;
 
+// this variable is used for the flip/rotate buttons.
+
+let rotate = 0;
+
 const applyFilters = () => {
+  // this is a css style (trasform) that get's the value dynamicly
+  previewImg.style.transform = `rotate(${rotate}deg)`;
   previewImg.style.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`;
 };
 
@@ -71,6 +78,18 @@ const updateFilter = () => {
   }
   applyFilters();
 };
+
+// A loop for each flip/rotate button, we get the exact id of button clicked
+
+rotateOptions.forEach((option) => {
+  option.addEventListener("click", () => {
+    // when we click rotate left, decrement rotate value with -90
+    if (option.id === "left") {
+      rotate -= 90;
+    }
+    applyFilters();
+  });
+});
 
 fileInput.addEventListener("change", loadImage);
 
