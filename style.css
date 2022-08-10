@@ -114,6 +114,8 @@ body {
   align-items: center;
   justify-content: center;
   flex-grow: 1;
+  /* to not let the picture overflow the buttons*/
+  overflow: hidden;
 }
 
 .preview-img img {

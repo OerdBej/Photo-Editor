@@ -16,11 +16,13 @@ let brightness = 100,
 
 // this variable is used for the flip/rotate buttons.
 
-let rotate = 0;
+let rotate = 0,
+  flipHorizontal = 1,
+  flipVertical = 1;
 
 const applyFilters = () => {
   // this is a css style (trasform) that get's the value dynamicly
-  previewImg.style.transform = `rotate(${rotate}deg)`;
+  previewImg.style.transform = `rotate(${rotate}deg) scale(${flipHorizontal}, ${flipVertical})`;
   previewImg.style.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`;
 };
 
@@ -86,6 +88,12 @@ rotateOptions.forEach((option) => {
     // when we click rotate left, decrement rotate value with -90
     if (option.id === "left") {
       rotate -= 90;
+    } else if (option.id === "right") {
+      rotate += 90;
+    } else if (option.id === "horizontal") {
+      flipHorizontal = flipHorizontal === 1 ? -1 : 1;
+    } else {
+      flipVertical = flipVertical === 1 ? -1 : 1;
     }
     applyFilters();
   });
