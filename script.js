@@ -6,6 +6,7 @@ previewImg = document.querySelector(".preview-img img");
 chooseImgBtn = document.querySelector(".choose-img");
 filterValue = document.querySelector(".filter-info .value");
 rotateOptions = document.querySelectorAll(".rotate button");
+resetFilterBtn = document.querySelector(".reset-filter");
 
 // manually setting up brightness and saturation to make the conditions. So each button will have set up the value from the input.
 
@@ -99,6 +100,14 @@ rotateOptions.forEach((option) => {
   });
 });
 
+// function for the reset btn filter, reseting all the value to default
+
+const resetFilter = () => {
+  (brightness = 100), (saturation = 100), (inversion = 0), (grayscale = 0);
+  (rotate = 0), (flipHorizontal = 1), (flipVertical = 1);
+  applyFilters();
+};
+
 fileInput.addEventListener("change", loadImage);
 
 // event listener triggered by the function values
@@ -106,3 +115,6 @@ filterSlider.addEventListener("input", updateFilter);
 
 // Triggers the hidden input
 chooseImgBtn.addEventListener("click", () => fileInput.click());
+
+// trigger the reset button filter
+resetFilterBtn.addEventListener("click", resetFilter);
