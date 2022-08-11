@@ -33,6 +33,8 @@ const loadImage = () => {
   if (!file) return;
   previewImg.src = URL.createObjectURL(file);
   previewImg.addEventListener("load", () => {
+    // this btn will reset the filter value if the users clicked to add another photo
+    resetFilterBtn.click();
     document.querySelector(".container").classList.remove("disable");
   });
   console.log(file);
@@ -120,10 +122,28 @@ const saveImage = () => {
   // here we set up canvas to acual image width and height
   canvas.width = previewImg.naturalWidth;
   canvas.height = previewImg.naturalHeight;
-  /*----*/
+  // applying users selected filters to canvas filter
   ctx.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`;
-  ctx.drawImage(previewImg, 0, 0, canvas.width, canvas.height);
-  document.body.appendChild(canvas);
+  // This method will make the canvas to the center
+  ctx.translate(canvas.width / 2, canvas.height / 2);
+  // if the rotating value is not 0, then rotate the canvas
+  if (rotate !== 0) {
+    ctx.rotate((rotate * Math.PI) / 180);
+  }
+  ctx.scale(flipHorizontal, flipVertical);
+  ctx.drawImage(
+    previewImg,
+    -canvas.width / 2,
+    -canvas.height / 2,
+    canvas.width,
+    canvas.height
+  );
+
+  // creating an element in order to passit to dowload method to pass it as data url in canvas
+  const link = document.createElement("a");
+  link.download = "image.jpg";
+  link.href = canvas.toDataURL;
+  link.click();
 };
 
 fileInput.addEventListener("change", loadImage);
