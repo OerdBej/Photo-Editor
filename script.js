@@ -7,6 +7,7 @@ chooseImgBtn = document.querySelector(".choose-img");
 filterValue = document.querySelector(".filter-info .value");
 rotateOptions = document.querySelectorAll(".rotate button");
 resetFilterBtn = document.querySelector(".reset-filter");
+saveImgBtn = document.querySelector(".save-img");
 
 // manually setting up brightness and saturation to make the conditions. So each button will have set up the value from the input.
 
@@ -105,7 +106,15 @@ rotateOptions.forEach((option) => {
 const resetFilter = () => {
   (brightness = 100), (saturation = 100), (inversion = 0), (grayscale = 0);
   (rotate = 0), (flipHorizontal = 1), (flipVertical = 1);
+  // here we click brightnes btn in order to brightnes get the default value
+  filterOptions[0].click();
   applyFilters();
+};
+
+// save img function
+
+const saveImage = () => {
+  console.log("Does this button works?");
 };
 
 fileInput.addEventListener("change", loadImage);
@@ -118,3 +127,6 @@ chooseImgBtn.addEventListener("click", () => fileInput.click());
 
 // trigger the reset button filter
 resetFilterBtn.addEventListener("click", resetFilter);
+
+// save button
+saveImgBtn.addEventListener("click", saveImage);
