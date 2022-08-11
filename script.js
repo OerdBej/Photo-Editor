@@ -114,7 +114,16 @@ const resetFilter = () => {
 // save img function
 
 const saveImage = () => {
-  console.log("Does this button works?");
+  // creating the canvas element. canvas.getContext return a drawing context for the canvas
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  // here we set up canvas to acual image width and height
+  canvas.width = previewImg.naturalWidth;
+  canvas.height = previewImg.naturalHeight;
+  /*----*/
+  ctx.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`;
+  ctx.drawImage(previewImg, 0, 0, canvas.width, canvas.height);
+  document.body.appendChild(canvas);
 };
 
 fileInput.addEventListener("change", loadImage);
