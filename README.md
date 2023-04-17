@@ -1,5 +1,7 @@
-# Photo - Editor 📸
+#js-photo-editor 📸
 
-Photo Editor is an application made only with vanilla JavaScript that allow you to uplaod your favourite image. While uploading the photo you have the possibility to make some few changes like you can play with the brightnes the contrast and at the same time you can save your photo on your local machine.
+The Photo Editor application is a vanilla JavaScript-based project that enables users to upload their preferred images and apply custom modifications. The app offers a variety of editing options, including brightness and contrast adjustment, and allows users to save their edited images locally.
 
-During this project I had the possibility to work and to have a better udnerstanding how vanilla JavaScript works with the DOM and practiced <canva> in order to play with the uplaoded images.
+While working on the Photo Editor project, developers gain valuable experience in working with vanilla JavaScript and manipulating the DOM. They can also hone their skills in using the <canvas> element, which is a crucial tool for editing images.
+
+In summary, the Photo Editor is an excellent project for junior web developers to practice and improve their JavaScript skills in a practical setting. By exploring the inner workings of vanilla JavaScript and experimenting with the <canvas> element, developers can develop the necessary knowledge and expertise to tackle more complex projects in the future.
